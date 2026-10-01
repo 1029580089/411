@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>序工 · 生产计划工作台</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<header><a class="brand" href="./"><span class="mark">序</span> 序工 <span class="brand-sub">WORKSHOP PLANNER</span></a><span class="local">● 本地计算 · 数据不上传</span></header>
+<main>
+  <section class="intro"><div><p class="eyebrow">PRODUCTION CONTROL / 01</p><h1>让每一道工序，<br>都有据可排。</h1><p class="subtitle">把库存、工序依赖与设备产能放在同一张计划里。<br>识别缺料与延期，再决定如何调整。</p></div><aside class="intro-note"><span>计划策略</span><strong>齐套优先校验<br>有限产能排程</strong><p>按优先级、交期与工单编号排序；<br>不满足条件的工单保留明确原因。</p></aside></section>
+  <section class="toolbar"><div><h2>计划总览</h2><p id="period">正在载入样例…</p></div><div class="actions"><button id="reset" class="secondary">重置样例</button><button id="export" class="secondary" disabled>导出 CSV</button><button id="run">重新排程 ↗</button></div></section>
+  <p id="notice" role="status" aria-live="polite"></p>
+  <section class="metrics" aria-label="计划指标"><article><span>工单总数</span><strong id="total">—</strong><small>当前计划范围</small></article><article><span>按期完成</span><strong id="onTime">—</strong><small>已通过物料与产能校验</small></article><article><span>交期风险</span><strong id="late">—</strong><small>预计完工晚于交期</small></article><article><span>暂不可排</span><strong id="blocked">—</strong><small>缺料、依赖或计划窗口不足</small></article></section>
+  <section class="panel"><div class="section-title"><h2>工单执行计划</h2><span id="utilization"></span></div><div class="table-wrap"><table><thead><tr><th>工单 / 数量</th><th>状态</th><th>承诺交期</th><th>计划区间</th><th>排程说明</th></tr></thead><tbody id="orders"></tbody></table></div></section>
+  <section class="panel"><div class="section-title"><h2>设备负荷</h2><span>分钟 / 当日可用分钟</span></div><div id="load" class="table-wrap"></div></section>
+  <section class="bottom-grid"><section class="panel"><div class="section-title"><h2>库存结余</h2><span>仅扣减成功排程工单</span></div><div id="stock" class="stock-list"></div><div class="assumptions"><h3>计划边界</h3><p>以自然日为时间桶，工序可跨天；下一道工序及依赖工单最早次日开始。未配置停机的日期均有产能，周末也需显式设置。</p><p>采用确定性的贪心策略，不保证全局最优；不包含采购到货、换型损耗、班次和在制品。</p></div></section><section class="panel input-panel"><div class="section-title"><h2>调整计划输入</h2><span>JSON</span></div><label for="input">修改库存、工单或设备停机日期，然后重新排程。</label><textarea id="input" spellcheck="false" aria-describedby="input-help"></textarea><p id="input-help">优先级：3 高 / 2 中 / 1 低。修改后旧结果立即失效；校验失败时不会保留可导出的旧计划。</p></section></section>
+  <footer><span>序工 / Workshop Planner</span><span>可解释的计划，比一个日期更有用。</span></footer>
+</main><script type="module" src="./app.mjs"></script>
+</body></html>

@@ -1,0 +1,54 @@
+{
+  "createdDate": "2026-10-01",
+  "project": "Workshop Planner",
+  "purpose": "New code portfolio for qualification review",
+  "scope": "Local validation only; not enterprise production use, historical maintenance, or platform acceptance",
+  "runtime": "v20.11.0",
+  "tests": {
+    "command": "npm test",
+    "expectedTests": 24,
+    "generatedWorkloads": 100
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "dc2ad9b34e2a9f4a3ee08af3d7e6ad629fad92b17a31f7d99f1cd614e7daee0b"
+    },
+    {
+      "path": "app.mjs",
+      "sha256": "f1efd3c6407447e52b59b6086cb2e6625fc5f7ad2d9291c09ce7a541f4f355b4"
+    },
+    {
+      "path": "style.css",
+      "sha256": "c494d6f5ddfcfec1d693930f9306c439eaf4c18843b77485c3a2fb8fbaee1138"
+    },
+    {
+      "path": "sample.json",
+      "sha256": "4b46e26014baa5940f42b5601b2434199dd7d9b4b3825b01472a010ef42cf01b"
+    },
+    {
+      "path": "planner.mjs",
+      "sha256": "7312268554a3ca940ca58c25517e7793c70d992caf3afbfbb767e4624bb412f9"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "6ba66a89eda9e3b43724c1886f12b7cd33516e0fba7eabb624383d6b949973b1"
+    },
+    {
+      "path": "planner.test.mjs",
+      "sha256": "dd052275510ed28e1bca6bd94b1c4c9aa7e55a6b7a30189e190f38953f92eabb"
+    },
+    {
+      "path": "server.test.mjs",
+      "sha256": "8393309fefb1291d82c9468f23d9a2b6b01e36fd5f98f461605518f06d9f9915"
+    },
+    {
+      "path": "package.json",
+      "sha256": "065b6ae6a2dee0a39acdaab76d619f8dafab7adc6236495032fd3c0ee612854c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3b3553e4ff18e8cd7759f92b48155ce9e4f4d83eb81c363b58279d592c49b859"
+    }
+  ]
+}

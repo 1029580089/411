@@ -1,0 +1,15 @@
+{
+  "name": "workshop-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Production planning with material and capacity constraints",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "check": "node --check planner.mjs && node --check app.mjs && node --check server.mjs"
+  }
+}

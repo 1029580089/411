@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: sample plan is deterministic and explains every order
+ok 1 - sample plan is deterministic and explains every order
+  ---
+  duration_ms: 8.6357
+  ...
+# Subtest: material shortage blocks without consuming stock
+ok 2 - material shortage blocks without consuming stock
+  ---
+  duration_ms: 0.3196
+  ...
+# Subtest: capacity shortage does not partially reserve a work order
+ok 3 - capacity shortage does not partially reserve a work order
+  ---
+  duration_ms: 0.7878
+  ...
+# Subtest: operations split across days without overbooking
+ok 4 - operations split across days without overbooking
+  ---
+  duration_ms: 0.2836
+  ...
+# Subtest: next operation starts on a later day, even on the same machine
+ok 5 - next operation starts on a later day, even on the same machine
+  ---
+  duration_ms: 0.1426
+  ...
+# Subtest: dependencies start after predecessor finishes
+ok 6 - dependencies start after predecessor finishes
+  ---
+  duration_ms: 0.145
+  ...
+# Subtest: release date and machine downtime both constrain the plan
+ok 7 - release date and machine downtime both constrain the plan
+  ---
+  duration_ms: 0.1262
+  ...
+# Subtest: competing orders reserve material once, in priority order
+ok 8 - competing orders reserve material once, in priority order
+  ---
+  duration_ms: 0.1682
+  ...
+# Subtest: failed second operation rolls back the first operation and stock
+ok 9 - failed second operation rolls back the first operation and stock
+  ---
+  duration_ms: 0.1886
+  ...
+# Subtest: equal priority uses earlier due date then ID
+ok 10 - equal priority uses earlier due date then ID
+  ---
+  duration_ms: 0.3687
+  ...
+# Subtest: planning does not mutate input
+ok 11 - planning does not mutate input
+  ---
+  duration_ms: 0.1547
+  ...
+# Subtest: zero-capacity calendar and empty order list have defined results
+ok 12 - zero-capacity calendar and empty order list have defined results
+  ---
+  duration_ms: 0.1091
+  ...
+# Subtest: validation rejects invalid calendar date
+ok 13 - validation rejects invalid calendar date
+  ---
+  duration_ms: 0.2592
+  ...
+# Subtest: validation rejects negative stock
+ok 14 - validation rejects negative stock
+  ---
+  duration_ms: 0.1006
+  ...
+# Subtest: validation rejects fractional quantity
+ok 15 - validation rejects fractional quantity
+  ---
+  duration_ms: 0.0714
+  ...
+# Subtest: validation rejects unknown machine
+ok 16 - validation rejects unknown machine
+  ---
+  duration_ms: 0.0691
+  ...
+# Subtest: validation rejects duplicate order
+ok 17 - validation rejects duplicate order
+  ---
+  duration_ms: 0.1038
+  ...
+# Subtest: validation rejects missing dependency
+ok 18 - validation rejects missing dependency
+  ---
+  duration_ms: 0.1246
+  ...
+# Subtest: validation rejects invalid horizon
+ok 19 - validation rejects invalid horizon
+  ---
+  duration_ms: 0.0726
+  ...
+# Subtest: validation rejects unsafe material key
+ok 20 - validation rejects unsafe material key
+  ---
+  duration_ms: 0.0874
+  ...
+# Subtest: generated workloads conserve stock, capacity and operation minutes
+ok 21 - generated workloads conserve stock, capacity and operation minutes
+  ---
+  duration_ms: 17.9321
+  ...
+# Subtest: dependency cycles and missing materials are rejected
+ok 22 - dependency cycles and missing materials are rejected
+  ---
+  duration_ms: 0.331
+  ...
+# Subtest: CSV quotes cells and neutralizes formula-like values
+ok 23 - CSV quotes cells and neutralizes formula-like values
+  ---
+  duration_ms: 0.2784
+  ...
+# Subtest: HTTP serves only public assets, with security headers and safe methods
+ok 24 - HTTP serves only public assets, with security headers and safe methods
+  ---
+  duration_ms: 50.5508
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 148.4084

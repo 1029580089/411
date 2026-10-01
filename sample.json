@@ -1,0 +1,17 @@
+{
+  "startDate": "2026-10-01",
+  "horizonDays": 7,
+  "machines": [
+    {"id": "CUT", "dailyMinutes": 480, "downtime": []},
+    {"id": "CNC", "dailyMinutes": 420, "downtime": ["2026-10-03"]},
+    {"id": "QC", "dailyMinutes": 360, "downtime": []}
+  ],
+  "stock": {"STEEL": 100, "BOLT": 200},
+  "orders": [
+    {"id": "WO-1001", "quantity": 30, "priority": 3, "dueDate": "2026-10-03", "bom": {"STEEL": 1}, "route": [{"machine": "CUT", "minutesPerUnit": 6}, {"machine": "CNC", "minutesPerUnit": 12}, {"machine": "QC", "minutesPerUnit": 3}], "dependsOn": []},
+    {"id": "WO-1002", "quantity": 20, "priority": 2, "dueDate": "2026-10-03", "bom": {"STEEL": 2}, "route": [{"machine": "CUT", "minutesPerUnit": 8}, {"machine": "CNC", "minutesPerUnit": 15}], "dependsOn": []},
+    {"id": "WO-1003", "quantity": 25, "priority": 2, "dueDate": "2026-10-05", "bom": {"STEEL": 2}, "route": [{"machine": "CNC", "minutesPerUnit": 8}], "dependsOn": []},
+    {"id": "WO-1004", "quantity": 10, "priority": 1, "dueDate": "2026-10-05", "bom": {"BOLT": 4}, "route": [{"machine": "QC", "minutesPerUnit": 10}], "dependsOn": ["WO-1001"]},
+    {"id": "WO-1005", "quantity": 8, "priority": 1, "dueDate": "2026-10-06", "bom": {"BOLT": 2}, "route": [{"machine": "QC", "minutesPerUnit": 5}], "dependsOn": ["WO-1003"]}
+  ]
+}
